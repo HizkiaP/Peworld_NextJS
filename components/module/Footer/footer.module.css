@@ -1,0 +1,22 @@
+.text {
+    color: #fff;
+    font-weight: 200;
+}
+
+.line {
+    background-color: #fff;
+    height: 1px;
+    /* width: 1140px; */
+    width: 100%;
+    margin-top: 50px;
+}
+
+.textEnd {
+    color: #fff;
+}
+
+.list {
+    list-style: none;
+    color: #fff;
+    font-weight: 200;
+}

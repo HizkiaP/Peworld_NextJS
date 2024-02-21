@@ -1,0 +1,12 @@
+/* .img {
+    background-image: linear-gradient(#5E50A1 100%, #fff 0%), url("/assets/background-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+} */
+
+.loginButton {
+    width: 570px;
+    height: 45px;
+    background-color: #FBB017;
+}

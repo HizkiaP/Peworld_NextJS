@@ -1,0 +1,11 @@
+.allLabel {
+    color: #9EA0A5;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.allInput {
+    border-radius: 4px;
+    width: 570px;
+    height: 45px;
+}
