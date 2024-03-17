@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import logoNav from "/assets/Group 980 1.png";
 import Link from "next/link";
-import Button from "@/components/base/Button";
+import Button from "@/components/base/button";
 import styles from "./nav.module.css";
 
 const Nav = () => {
