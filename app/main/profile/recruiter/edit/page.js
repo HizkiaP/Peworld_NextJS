@@ -1,3 +1,4 @@
+"use client"
 import Button from '@/components/base/button'
 import Input from '@/components/base/Input'
 import TextArea from '@/components/base/textArea'
@@ -9,7 +10,7 @@ import { RiPencilFill } from "react-icons/ri";
 import { PiMapPin } from "react-icons/pi";
 import Profile from "/assets/Ellipse 330.svg";
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const EditRecruiterPage = () => {
   return (

@@ -23,6 +23,7 @@ const EditWorkerPage = () => {
   const [skills, setSkills] = useState([]);
   const [skill, setSkill] = useState("");
   const [exp, setExp] = useState("");
+  const [data, setData] = useState([]);
 
   const handleGetSkill = async () => {
     try {
@@ -64,14 +65,27 @@ const EditWorkerPage = () => {
   const handleAddExp = async () => {
     try {
       await addExperience(exp);
-      alert('Add Experience Success!')
+      alert("Add Experience Success!");
       console.log(exp);
-      setExp("")
+      setExp("");
     } catch (error) {
       console.log(error);
       alert("Add Experience Failed!");
     }
   };
+
+  const getWorkerById = async () => {
+    try {
+      await getWorkerByID();
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getWorkerById();
+  }, []);
 
   return (
     <div>
@@ -80,44 +94,50 @@ const EditWorkerPage = () => {
         <div className="row">
           {/* Left */}
           <div className="col-6">
-            <CardBody className="">
-              <div className="d-flex justify-content-center">
-                <Image src={Profile} alt="Profile Photo" />
-              </div>
-              <div className="d-flex justify-content-center mt-3">
-                <Button className="d-flex gap-1" style={{ border: "none" }}>
-                  <div>
-                    <RiPencilFill style={{ color: "#9EA0A5" }} />
+            {data.map(() => (
+              <>
+                <CardBody className="">
+                  <div className="d-flex justify-content-center">
+                    <Image src={Profile} alt="Profile Photo" />
                   </div>
-                  <div>
-                    <p style={{ color: "#9EA0A5" }}>Edit</p>
+                  <div className="d-flex justify-content-center mt-3">
+                    <Button className="d-flex gap-1" style={{ border: "none" }}>
+                      <div>
+                        <RiPencilFill style={{ color: "#9EA0A5" }} />
+                      </div>
+                      <div>
+                        <p style={{ color: "#9EA0A5" }}>Edit</p>
+                      </div>
+                    </Button>
                   </div>
-                </Button>
-              </div>
-              <div className="mt-4" style={{ marginLeft: "4rem" }}>
-                <h5 style={{ color: "#1F2A36" }}>Louis Tomlinson</h5>
-                <p style={{ color: "#1F2A36", fontSize: "13px" }}>
-                  Web Developer
-                </p>
-                <div className="d-flex gap-2">
-                  <div>
-                    <PiMapPin style={{ color: "#9EA0A5" }} />
-                  </div>
-                  <div style={{ marginTop: "3.5px" }}>
-                    <p
-                      style={{
-                        color: "#9EA0A5",
-                        fontSize: "13px",
-                        fontWeight: "400",
-                      }}
-                    >
-                      Purwokerto, Jawa Tengah
+                  <div className="mt-4" style={{ marginLeft: "4rem" }}>
+                    <h5 style={{ color: "#1F2A36" }}>{data.name}</h5>
+                    <p style={{ color: "#1F2A36", fontSize: "13px" }}>
+                      Web Developer
+                    </p>
+                    <div className="d-flex gap-2">
+                      <div>
+                        <PiMapPin style={{ color: "#9EA0A5" }} />
+                      </div>
+                      <div style={{ marginTop: "3.5px" }}>
+                        <p
+                          style={{
+                            color: "#9EA0A5",
+                            fontSize: "13px",
+                            fontWeight: "400",
+                          }}
+                        >
+                          Purwokerto, Jawa Tengah
+                        </p>
+                      </div>
+                    </div>
+                    <p style={{ color: "#9EA0A5", fontSize: "13px" }}>
+                      Freelancer
                     </p>
                   </div>
-                </div>
-                <p style={{ color: "#9EA0A5", fontSize: "13px" }}>Freelancer</p>
-              </div>
-            </CardBody>
+                </CardBody>
+              </>
+            ))}
             <div className="d-flex flex-column gap-3">
               <Button
                 child="Simpan"
@@ -172,23 +192,27 @@ const EditWorkerPage = () => {
               <div className="row">
                 <div className="col-6">
                   <div className="d-flex">
-                    {skills.map((item) => (
-                      <div key={item.id}>
-                        <Button
-                          onClick={() => handleDeleteSkill(item.id)}
-                          style={{ border: "none", color: "#1F2A36" }}
-                        >
-                          {" "}
-                          <IoCloseCircleOutline />{" "}
-                        </Button>
-                        <Button
-                          className="ms-2"
-                          style={{ backgroundColor: "#FBB017", color: "#fff" }}
-                        >
-                          {item.skill_name}
-                        </Button>
-                      </div>
-                    ))}
+                    {skills &&
+                      skills.map((item) => (
+                        <div key={item.id}>
+                          <Button
+                            onClick={() => handleDeleteSkill(item.id)}
+                            style={{ border: "none", color: "#1F2A36" }}
+                          >
+                            {" "}
+                            <IoCloseCircleOutline />{" "}
+                          </Button>
+                          <Button
+                            className="ms-2"
+                            style={{
+                              backgroundColor: "#FBB017",
+                              color: "#fff",
+                            }}
+                          >
+                            {item.skill_name}
+                          </Button>
+                        </div>
+                      ))}
                   </div>
                   <Input
                     placeholder="Javascript"
@@ -225,7 +249,7 @@ const EditWorkerPage = () => {
                 child="Posisi"
                 placeholder="web developer"
                 className="mb-4"
-                onChange={(e) => setExp({...exp, position: e.target.value})}
+                onChange={(e) => setExp({ ...exp, position: e.target.value })}
               />
               <div className="row">
                 <div className="col-4">
@@ -234,7 +258,9 @@ const EditWorkerPage = () => {
                     placeholder="PT Harus bisa"
                     className="mb-4"
                     style={{ width: "190px" }}
-                    onChange={(e) => setExp({...exp, company: e.target.value})}
+                    onChange={(e) =>
+                      setExp({ ...exp, company: e.target.value })
+                    }
                   />
                 </div>
                 <div className="col-4">
@@ -243,7 +269,9 @@ const EditWorkerPage = () => {
                     placeholder="Januari"
                     className="mb-4"
                     style={{ width: "190px" }}
-                    onChange={(e) => setExp({...exp, work_month: e.target.value})}
+                    onChange={(e) =>
+                      setExp({ ...exp, work_month: e.target.value })
+                    }
                   />
                 </div>
                 <div className="col-4">
@@ -252,7 +280,9 @@ const EditWorkerPage = () => {
                     placeholder="2023"
                     className="mb-4"
                     style={{ width: "165px" }}
-                    onChange={(e) => setExp({...exp, work_year: e.target.value})}
+                    onChange={(e) =>
+                      setExp({ ...exp, work_year: e.target.value })
+                    }
                   />
                 </div>
               </div>
@@ -267,11 +297,13 @@ const EditWorkerPage = () => {
                   width: "570px",
                   marginBottom: "2rem",
                 }}
-                onChange={(e) => setExp({...exp, description: e.target.value})}
+                onChange={(e) =>
+                  setExp({ ...exp, description: e.target.value })
+                }
               />
               <hr />
               <Button
-              onClick={handleAddExp}
+                onClick={handleAddExp}
                 child="Tambah pengalaman kerja"
                 style={{
                   border: "1px solid #FBB017",
@@ -310,7 +342,10 @@ const EditWorkerPage = () => {
                     id="flexRadioDefault1"
                     // checked
                   />
-                  <label className="form-check-label" htmlFor="flexRadioDefault1">
+                  <label
+                    className="form-check-label"
+                    htmlFor="flexRadioDefault1"
+                  >
                     Aplikasi mobile
                   </label>
                 </div>
@@ -321,7 +356,10 @@ const EditWorkerPage = () => {
                     name="flexRadioDefault"
                     id="flexRadioDefault2"
                   />
-                  <label className="form-check-label" htmlFor="flexRadioDefault2">
+                  <label
+                    className="form-check-label"
+                    htmlFor="flexRadioDefault2"
+                  >
                     Aplikasi web
                   </label>
                 </div>
@@ -339,7 +377,7 @@ const EditWorkerPage = () => {
                     width: "100%",
                     marginBottom: "1rem",
                     paddingTop: "3rem",
-                    paddingBottom: "3rem"
+                    paddingBottom: "3rem",
                   }}
                 >
                   <div className="d-flex justify-content-center">
