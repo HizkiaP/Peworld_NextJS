@@ -13,7 +13,7 @@ import { RiGitlabLine } from "react-icons/ri";
 import React, { useState } from "react";
 import Button from "@/components/base/button";
 import Experience from "@/components/module/Experience";
-import Styles from "./portofolio.module.css";
+import Styles from "../../worker/portofolio/portofolio.module.css";
 
 const Portofolio = () => {
   const [tab, setTab] = useState("portofolio");
