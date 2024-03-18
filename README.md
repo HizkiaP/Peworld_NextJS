@@ -1,38 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hire Job Web Application
 
-## Getting Started
+Peworld is a web application that is useful for users who want to find jobs and users who are looking for workers. This web application is equipped with features for users to search for jobs based on their abilities. Users can upload work experience and portfolios which can be seen by recruiters. Recruiters are equipped with features to recruit workers who have matched the company's requirements.
 
-First, run the development server:
+<br />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Workers can upload work experience and portfolios.
+- Workers can edit their skills.
+- Workers can edit their profile.
+- Recruiters can edit their company profile.
+- Recruiters can hire workers who have matched company requirements
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<br />
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Built With
 
-## Learn More
+- Next JS
+- Bootstrap
 
-To learn more about Next.js, take a look at the following resources:
+<br />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Package dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- bootstrap
+- next
+- react
+- react-dom
+- react-icons
+- swr
 
-## Deploy on Vercel
+<br />
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+bash
+NEXT_PUBLIC_API_URL=
+
+<br />
+
+## Installation
+
+Clone the project
+
+bash
+  git clone https://github.com/HizkiaP/Peworld_NextJS.git my-project
+
+
+Go to the project directory
+
+bash
+  cd my-project
+
+
+Install dependencies
+
+bash
+  npm install
+
+
+Start the project
+
+bash
+  npm start
+
+<br />
 
 ## Screenshot
+
+<br />
+
+## Authors
+
+💻 [Hizkia Panjaitan](https://github.com/HizkiaP) as Fullstack Developer
