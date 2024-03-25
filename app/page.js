@@ -1,3 +1,4 @@
+"use client"
 // import Button from '@/components/base/Button'
 import React from "react";
 import Footer from "@/components/module/Footer";
@@ -47,6 +48,7 @@ const Home = () => {
                   backgroundColor: "#5E50A1",
                   color: "#fff"
                 }}
+                // onClick={() => }
               />
             </div>
           </div>

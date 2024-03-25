@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import backImage from "/assets/background-image.png";
@@ -13,8 +13,8 @@ const LoginPage = () => {
 
   const [values, setValues] = useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
   const handleChange = (e) => {
     setValues((values) => ({
@@ -28,24 +28,26 @@ const LoginPage = () => {
     fetch(process.env.NEXT_PUBLIC_API_URL + "/auth/login", {
       method: "POST",
       headers: {
-        "Accept": "application/json",
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(values),
     })
-      .then(async(res) => {
-        if(!res.ok){
-          const result = await res.json()
-          throw result.message
+      .then(async (res) => {
+        if (!res.ok) {
+          const result = await res.json();
+          throw result.message;
         }
         return res.json();
       })
       .then((res) => {
         console.log(res);
-        if(res.status === "success"){
-          const token = res.data.token
+        if (res.status === "success") {
+          const token = res.data.token;
+          const role = res.data.role;
           console.log(token);
-          localStorage.setItem('token', token)
+          localStorage.setItem("token", token);
+          localStorage.setItem("role", role);
         }
         // localStorage.setItem("token", res.data.token)
       })
@@ -74,67 +76,76 @@ const LoginPage = () => {
           />
         </div>
         <div className="col-6">
-          <div>
-            <h2
-              style={{ color: "#1F2A36", fontWeight: "600", paddingTop: "15%" }}
-            >
-              Halo, Pewpeople
-            </h2>
-            <p style={{ fontWeight: "400" }}>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-              doloribus, aspernatur quaerat dolore iure a!
-            </p>
-          </div>
-          <form>
-          <div>
-            <Input
-              className="mb-4"
-              child="Email"
-              placeholder="Masukan alamat email"
-              name="email"
-              value={values.email}
-              onChange={handleChange}
-            />
-            <Input
-              className="mb-4"
-              child="Kata Sandi"
-              placeholder="Masukan kata sandi"
-              type="password"
-              name="password"
-              value={values.password}
-              onChange={handleChange}
-            />
-          </div>
-          </form>
-          <div>
-            <p
-              className="text-end mb-4"
-              style={{
-                fontWeight: "400",
-                color: "#1F2A36",
-                fontSize: "14px",
-                paddingRight: "70px",
-              }}
-            >
-              Lupa kata sandi?
-            </p>
-          </div>
-          <div className="mb-4">
-            <Button onClick={handleSubmit} child="Masuk" className={styles.loginButton} />
-          </div>
-          <div className="text-center" style={{ paddingRight: "70px" }}>
-            <Link href="/auth/register" style={{ textDecoration: "none" }}>
-              <p
+          <div className="" style={{ marginTop: "125px", marginLeft: "50px" }}>
+            <div>
+              <h2
                 style={{
                   color: "#1F2A36",
-                  fontSize: "14px",
-                  fontWeight: "400",
+                  fontWeight: "600",
                 }}
               >
-                Anda belum punya akun?{" "}
-                <span style={{ color: "#FBB017" }}>Daftar disini</span>
+                Halo, Pewpeople
+              </h2>
+              <p style={{ fontWeight: "400" }}>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Numquam doloribus, aspernatur quaerat dolore iure a!
               </p>
-            </Link>
+            </div>
+            <form>
+              <div>
+                <Input
+                  className="mb-4"
+                  child="Email"
+                  placeholder="Masukan alamat email"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                />
+                <Input
+                  className="mb-4"
+                  child="Kata Sandi"
+                  placeholder="Masukan kata sandi"
+                  type="password"
+                  name="password"
+                  value={values.password}
+                  onChange={handleChange}
+                />
+              </div>
+            </form>
+            <div>
+              <p
+                className="text-end mb-4"
+                style={{
+                  fontWeight: "400",
+                  color: "#1F2A36",
+                  fontSize: "14px",
+                  paddingRight: "70px",
+                }}
+              >
+                Lupa kata sandi?
+              </p>
+            </div>
+            <div className="mb-4">
+              <Button
+                onClick={handleSubmit}
+                child="Masuk"
+                className={styles.loginButton}
+              />
+            </div>
+            <div className="text-center" style={{ paddingRight: "70px" }}>
+              <Link href="/auth/register" style={{ textDecoration: "none" }}>
+                <p
+                  style={{
+                    color: "#1F2A36",
+                    fontSize: "14px",
+                    fontWeight: "400",
+                  }}
+                >
+                  Anda belum punya akun?{" "}
+                  <span style={{ color: "#FBB017" }}>Daftar disini</span>
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
