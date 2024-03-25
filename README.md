@@ -81,7 +81,20 @@ bash
 
 | Portofolio in Worker Page | Experience in Worker Page |
 |------------|---------------|
-|<img src="https://drive.google.com/uc?export=view&id=1WzsUNoqL75i9dRP3r8-vSuZMAxAabV1B" width=400/>| <img src="https://drive.google.com/uc?export=view&id=12vO7zwRIGQlEAiK8FtVfExuMus7TT--P" width=400/>|
+|<img src="https://drive.google.com/uc?export=view&id=1WzsUNoqL75i9dRP3r8-vSuZMAxAabV1B" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1AHtWodbxasomjf96Y5dlIRirnUaBSXxT" width=400/>|
+
+| Worker Edit Page | Recruiter Edit Page |
+|------------|---------------|
+|<img src="https://drive.google.com/uc?export=view&id=12vO7zwRIGQlEAiK8FtVfExuMus7TT--P" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1HXDVAsTKTnEZ0QbVSqJknHpoq2dnPBmn" width=400/>|
+
+| Profile Company Page | Hire Page |
+|------------|---------------|
+|<img src="https://drive.google.com/uc?export=view&id=1sNM2GWiyC2hbb-c2IVBvWR4CaFXyxkIC" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1M8uYdplim2n6XDNjvTDUwdcWrp2oBzWd" width=400/>|
+
+| Worker Notification Page | Recruiter Notification Page |
+|------------|---------------|
+|<img src="https://drive.google.com/uc?export=view&id=1kk3nUxkMndNcgY-pu9KFqndSOS95eaZm" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1YONmg4eRgpxT3GHW8UDnwN6PbcemjUrP" width=400/>|
+
 
 
 <br />
