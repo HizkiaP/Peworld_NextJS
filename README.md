@@ -69,31 +69,31 @@ bash
 ## Screenshot
 | Login Page |
 |------------|
-|<img src="https://drive.google.com/uc?export=view&id=13k_QH-pn1V0PmPHv8-I6TJeva5alkwoE" width=400/>|
+|<img src="https://drive.google.com/uc?export=view&id=1dIdszty5ajcij_O-yz9ggiOqFVSbxKKD" width=400/>|
 
 | Register Worker Page | Register Recruiter Page |
 |------------|---------------|
-|<img src="https://drive.google.com/uc?export=view&id=1c-s32kdEvSmpE_EA-X6A4zpLH17lYKDN" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1RoRZs5BUaVcmxocGYZgrEXkk3HQhGfhH" width=400/>|
+|<img src="https://drive.google.com/uc?export=view&id=1DNyBl32NZPcoL96OK3BkaMJddNsVskEf" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1NUmBcmjENP7H-CEK1BcYLcXRz62a8GR6" width=400/>|
 
 | Landing Page | Home Page |
 |------------|---------------|
-|<img src="https://drive.google.com/uc?export=view&id=1DnOWO3GvVwZPdL9Tar1tipQSgfZaYY0M" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1GkOGrMIPOrdvPFwVX0hFoxsj8yQ9ryDe" width=400/>|
+|<img src="https://drive.google.com/uc?export=view&id=1AnlV75vIitP5T21zQmw1CpyArAWHv-Wa" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1ni1R5AD75Hzam5svvlM8QvVtj9SWqn_0" width=400/>|
 
 | Portofolio in Worker Page | Experience in Worker Page |
 |------------|---------------|
-|<img src="https://drive.google.com/uc?export=view&id=1WzsUNoqL75i9dRP3r8-vSuZMAxAabV1B" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1AHtWodbxasomjf96Y5dlIRirnUaBSXxT" width=400/>|
+|<img src="https://drive.google.com/uc?export=view&id=11Z15ZQoi_t0sF4OBMbBpqarSw-PcCJ0i" width=400/>| <img src="https://drive.google.com/uc?export=view&id=17oEEfJf1oH5GvwWeF3UNnbT5467_JyIK" width=400/>|
 
 | Worker Edit Page | Recruiter Edit Page |
 |------------|---------------|
-|<img src="https://drive.google.com/uc?export=view&id=12vO7zwRIGQlEAiK8FtVfExuMus7TT--P" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1HXDVAsTKTnEZ0QbVSqJknHpoq2dnPBmn" width=400/>|
+|<img src="https://drive.google.com/uc?export=view&id=1Ro_3946HGo9XLHj3P3U_Of81wsqCqF6H" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1zPnwCTljXxDacE6urK3OqOKHCwwO2Zwf" width=400/>|
 
 | Profile Company Page | Hire Page |
 |------------|---------------|
-|<img src="https://drive.google.com/uc?export=view&id=1sNM2GWiyC2hbb-c2IVBvWR4CaFXyxkIC" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1M8uYdplim2n6XDNjvTDUwdcWrp2oBzWd" width=400/>|
+|<img src="https://drive.google.com/uc?export=view&id=1exXlqzHELngQzC4bt0ORi5rGmKI8Gq4e" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1Vj9rAHizjq4JQ6_cOAQWmvoyqY1YQ-6r" width=400/>|
 
 | Worker Notification Page | Recruiter Notification Page |
 |------------|---------------|
-|<img src="https://drive.google.com/uc?export=view&id=1kk3nUxkMndNcgY-pu9KFqndSOS95eaZm" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1YONmg4eRgpxT3GHW8UDnwN6PbcemjUrP" width=400/>|
+|<img src="https://drive.google.com/uc?export=view&id=1QraadUb9hLivgDkrQhgNh4Otxv4zsX1L" width=400/>| <img src="https://drive.google.com/uc?export=view&id=1e2MKf-lRz6S6L_uJ20bezyRMN9m4m28I" width=400/>|
 
 
 
