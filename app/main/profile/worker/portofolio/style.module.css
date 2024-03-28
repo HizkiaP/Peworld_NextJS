@@ -1,0 +1,8 @@
+.activeTab {
+    color: #1F2A36;
+    text-decoration: underline solid #5E50A1 4px;
+}
+
+.inactiveTab {
+    color: #9EA0A5;
+}

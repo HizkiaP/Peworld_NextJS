@@ -114,7 +114,7 @@ const LoginPage = () => {
               <Button
                 onClick={handleSubmit}
                 child="Masuk"
-                className={styles.loginButton}
+                className={`${styles.loginButton}`}
               />
             </div>
             <div className={`text-center ${styles.wrapNone}`}>

@@ -25,9 +25,7 @@ const Home = () => {
       <Nav />
       {/* Hero Section */}
       <section className="container">
-        <div
-          className={`${styles.wrapAll} mt-5`}
-        >
+        <div className={`${styles.wrapAll} mt-5`}>
           {/* Left */}
           <div className={`${styles.wrapLeft}`}>
             <div>
@@ -39,34 +37,28 @@ const Home = () => {
                 yang efisien dan terpercaya untuk memperkuat tim Anda.
               </p>
               <Link href={`/main/home`}>
-              <Button
-                child="Mulai Dari Sekarang"
-                className="mb-5 mt-4"
-                style={{
-                  width: "180px",
-                  height: "50px",
-                  backgroundColor: "#5E50A1",
-                  color: "#fff",
-                }}
-              />
+                <Button
+                  child="Mulai Dari Sekarang"
+                  className="mb-5 mt-4"
+                  style={{
+                    width: "180px",
+                    height: "50px",
+                    backgroundColor: "#5E50A1",
+                    color: "#fff",
+                  }}
+                />
               </Link>
             </div>
           </div>
           {/* Right */}
           <div className={`${styles.wrapRight}`}>
-            <Image
-              src={Img}
-              alt="Hero Image"
-              className={`${styles.heroImg}`}
-            />
+            <Image src={Img} alt="Hero Image" className={`${styles.heroImg}`} />
           </div>
         </div>
       </section>
 
       <section className={`${styles.wrapContainer} container`}>
-        <div
-          className={`${styles.wrapAll2}`}
-        >
+        <div className={`${styles.wrapAll2}`}>
           {/* Left */}
           <div className={`${styles.wrapLeft2}`}>
             <Image
@@ -159,16 +151,18 @@ const Home = () => {
 
           {/* Right */}
           <div className={`${styles.wrapRight3}`}>
-            <Image src={Img3} alt="hero-image" className={`${styles.heroImg3}`}/>
+            <Image
+              src={Img3}
+              alt="hero-image"
+              className={`${styles.heroImg3}`}
+            />
           </div>
         </div>
       </section>
 
       <section className={`${styles.wrapContainer3} container`}>
         <h4 className="text-center mb-5">Their opinion about peworld</h4>
-        <div
-          className={`${styles.wrapCard}`}
-        >
+        <div className={`${styles.wrapCard}`}>
           <div className={`${styles.card}`}>
             <div className="text-center">
               <CardBody
@@ -244,23 +238,21 @@ const Home = () => {
             marginBottom: "7rem",
           }}
         >
-          <div
-            className={`${styles.wrapBtn}`}
-          >
+          <div className={`${styles.wrapBtn}`}>
             <div className={`${styles.wrapText}`}>
-              <h4>
-              Temukan talenta unggulan dengan Peworld
-              </h4>
+              <h4>Temukan talenta unggulan dengan Peworld</h4>
             </div>
             <div className="">
-              <Button
-                child="Mulai Dari Sekarang"
-                style={{
-                  backgroundColor: "#FFFFFF",
-                  color: "#796EAF",
-                  padding: "13px 13px",
-                }}
-              />
+              <Link href={`/main/home`}>
+                <Button
+                  child="Mulai Dari Sekarang"
+                  style={{
+                    backgroundColor: "#FFFFFF",
+                    color: "#796EAF",
+                    padding: "13px 13px",
+                  }}
+                />
+              </Link>
             </div>
           </div>
         </div>
