@@ -23,9 +23,12 @@ const Experience = () => {
   const handleGetExperience = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/experience/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/experience`,
         {
           method: "GET",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       );
       const result = await response.json();

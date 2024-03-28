@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./card.module.css"
 
-const CardBody = ({ children, style }) => {
+const CardBody = ({ children, style, className }) => {
   return (
-    <div className={`card-body ${styles.card}`}  style={style}>
+    <div className={`card-body ${className}  ${styles.card}`}  style={style}>
       {children} 
     </div>
   );

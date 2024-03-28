@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
@@ -7,40 +7,47 @@ import Profile from "/assets/photo-profile.png";
 import Link from "next/link";
 import { FaRegBell } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
+import styles from "./navbar.module.css";
 
 const NavBar = () => {
   const [role, setRole] = useState("worker");
 
   useEffect(() => {
-    const savedRole = localStorage.getItem('role');
+    const savedRole = localStorage.getItem("role");
     if (savedRole) {
       setRole(savedRole);
     }
   }, []);
 
   return (
-    <nav className="navbar">
-      <div className="container mt-3">
-        <div className="row">
+    <nav className="navbar mt-3">
+      <div className={`container ${styles.wrapAll}`}>
+        <div className="row w-100">
           <div className="col">
             <Link className="navbar-brand" href="/">
               <Image src={logoNav} alt="Navbar Logo" width="127" height="35" />
             </Link>
           </div>
-          <div className="col" style={{ marginRight: "900px" }}></div>
-          <div className="col align-items-center">
+          {/* <div className="col" style={{ marginRight: "900px" }}></div> */}
+          <div className="col">
             <ul
-              className="d-flex justify-content-between"
+              className="d-flex justify-content-end"
               style={{ listStyle: "none" }}
             >
-              <Link href={role === "worker" ? `/main/notification/worker` : `/main/notification/recruiter`}>
-                <li style={{ marginRight: "40px", color: "#000" }}>
-                  <FaRegBell />
+              <Link
+                href={
+                  role === "worker"
+                    ? `/main/notification/worker`
+                    : `/main/notification/recruiter`
+                }
+              >
+                <li style={{ color: "#000", marginTop: 2, marginRight: 30 }}>
+                  <FaRegBell size={27} />
                 </li>
               </Link>
-              <li style={{ marginRight: "40px", color: "#000" }}>
+              {/* <li style={{ color: "#000" }}>
                 <IoMailOutline />
-              </li>
+              </li> */}
               <li>
                 <Image
                   src={Profile}

@@ -1,0 +1,11 @@
+.home {
+    color: #000000;
+    margin-left: 100px;
+    margin-top: 5px;
+}
+
+@media (min-width: 425px) and (max-width: 992px) {
+    .home {
+        margin-left: 5px;
+    }
+}

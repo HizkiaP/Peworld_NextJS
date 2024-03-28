@@ -132,9 +132,7 @@ const Hire = () => {
                 </div>
                 {/* <p style={{ color: "#9EA0A5", fontSize: "13px" }}>Freelancer</p> */}
                 <p style={{ color: "#9EA0A5", fontSize: "13px" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum erat orci, mollis nec gravida sed, ornare quis
-                  urna. Curabitur eu lacus fringilla, vestibulum risus at.
+                  {data.description}
                 </p>
               </div>
 
@@ -165,11 +163,11 @@ const Hire = () => {
           {/* Right */}
           <div style={{ marginRight: "13rem" }}>
             <div>
-              <h2>{`Hubungi ${data.name}`}</h2>
-              <p className="mt-4" style={{ color: "#46505C" }}>
+              <h2 className="mb-4">{`Hubungi ${data.name}`}</h2>
+              {/* <p className="mt-4" style={{ color: "#46505C" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 euismod ipsum et dui rhoncus auctor.
-              </p>
+              </p> */}
 
               <Input
                 child="Tujuan tentang pesan ini"

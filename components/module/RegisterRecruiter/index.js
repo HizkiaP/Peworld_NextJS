@@ -54,13 +54,12 @@ const Recruiter = () => {
   };
 
   return (
-    <div className="container">
       <div className="row">
-        <div className="col-6" style={{ height: "100vh" }}>
+        <div className="col-lg-6" style={{ height: "100vh" }}>
           <form>
             <div>
               <Input
-                className="mb-4"
+                className={`mb-4 ${styles.label}`}
                 child="Nama"
                 placeholder="Masukan nama panjang"
                 name="name"
@@ -68,7 +67,7 @@ const Recruiter = () => {
                 onChange={handleChange}
               />
               <Input
-                className="mb-4"
+                className={`mb-4 ${styles.label}`}
                 child="Email"
                 placeholder="Masukan alamat email"
                 name="email"
@@ -76,7 +75,7 @@ const Recruiter = () => {
                 onChange={handleChange}
               />
               <Input
-                className="mb-4"
+                className={`mb-4 ${styles.label}`}
                 child="Perusahaan"
                 placeholder="Masukan nama perusahaan"
                 name="company"
@@ -84,7 +83,7 @@ const Recruiter = () => {
                 onChange={handleChange}
               />
               <Input
-                className="mb-4"
+                className={`mb-4 ${styles.label}`}
                 child="Jabatan"
                 placeholder="Posisi di perusahaan Anda"
                 name="position"
@@ -92,7 +91,7 @@ const Recruiter = () => {
                 onChange={handleChange}
               />
               <Input
-                className="mb-4"
+                className={`mb-4 ${styles.label}`}
                 child="No handphone"
                 placeholder="Masukan no handphone"
                 name="phone"
@@ -100,7 +99,7 @@ const Recruiter = () => {
                 onChange={handleChange}
               />
               <Input
-                className="mb-4"
+                className={`mb-4 ${styles.label}`}
                 child="Kata Sandi"
                 placeholder="Masukan kata sandi"
                 name="password"
@@ -115,7 +114,7 @@ const Recruiter = () => {
             </div>
           </form>
           <div className="">
-            <Button child="Daftar" className={styles.registerButton} onClick={handleSubmit}/>
+            <Button child="Daftar" className={`mt-2 ${styles.registerButton}`} onClick={handleSubmit}/>
           </div>
           {/* <div className="text-center" style={{ paddingRight: "70px" }}>
             <p
@@ -127,7 +126,6 @@ const Recruiter = () => {
           </div> */}
         </div>
       </div>
-    </div>
   );
 };
 

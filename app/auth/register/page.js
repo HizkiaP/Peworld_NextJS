@@ -55,46 +55,43 @@ const RegisterPage = () => {
 
   return (
     <div className="container">
-      <div className="row">
-        <div
-          className="col-6"
-          style={{ height: "100vh", backgroundColor: "#5E50A1" }}
-        >
+      <div className={`row ${styles.wrapAll}`}>
+        <div className={`col-lg-6 ${styles.wrap2}`}>
           <Image
             // className={styles.img}
             src={backImage}
             alt="background image"
-            style={{
-              width: "100%",
-              height: "100%",
-              opacity: "25%",
-            }}
+            className={`${styles.img}`}
           />
         </div>
-        <div className="col-6" style={{ height: "100vh" }}>
-          <div
-            className=""
-            style={{ marginTop: "50px", marginLeft: "50px" }}
-          >
+        <div className={`col-lg-6 ${styles.wrapperText}`}>
+          <div className={`${styles.wrapText}`}>
             <div>
-              <h2 style={{ color: "#1F2A36", fontWeight: "600" }}>
-                Halo, Pewpeople
-              </h2>
-              <p style={{ fontWeight: "400" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Numquam doloribus, aspernatur quaerat dolore iure a!
+              <h2>Halo, Pewpeople</h2>
+              <p className={`${styles.line}`}>
+                Bergabunglah dengan Peworld hari ini dan temukan peluang baru
+                dalam mengelola bakat terbaik. Daftar sekarang untuk memulai
+                perjalanan rekrutmen yang menginspirasi!
               </p>
             </div>
             <div className="d-flex gap-5">
               <p
                 onClick={() => setTab("register Pekerja")}
-                style={{ color: "#9EA0A5" }}
+                className={
+                  tab === "register Pekerja"
+                    ? `${styles.activeTab}`
+                    : `${styles.inactiveTab} ${styles.tab}`
+                }
               >
                 Register Pekerja
               </p>
               <p
                 onClick={() => setTab("register Perekrut")}
-                style={{ color: "#9EA0A5" }}
+                className={
+                  tab === "register Perekrut"
+                    ? `${styles.activeTab}`
+                    : `${styles.inactiveTab} ${styles.tab}`
+                }
               >
                 Register Perekrut
               </p>
@@ -103,7 +100,7 @@ const RegisterPage = () => {
               <form>
                 <div>
                   <Input
-                    className="mb-4"
+                    className={`mb-4 ${styles.label}`}
                     child="Nama"
                     placeholder="Masukan nama panjang"
                     name="name"
@@ -111,7 +108,7 @@ const RegisterPage = () => {
                     onChange={handleChange}
                   />
                   <Input
-                    className="mb-4"
+                    className={`mb-4 ${styles.label}`}
                     child="Email"
                     placeholder="Masukan alamat email"
                     name="email"
@@ -119,7 +116,7 @@ const RegisterPage = () => {
                     onChange={handleChange}
                   />
                   <Input
-                    className="mb-4"
+                    className={`mb-4 ${styles.label}`}
                     child="No handphone"
                     placeholder="Masukan no handphone"
                     name="phone"
@@ -127,7 +124,7 @@ const RegisterPage = () => {
                     onChange={handleChange}
                   />
                   <Input
-                    className="mb-4"
+                    className={`mb-4 ${styles.label}`}
                     child="Kata Sandi"
                     placeholder="Masukan kata sandi"
                     name="password"
@@ -141,20 +138,17 @@ const RegisterPage = () => {
               placeholder="Masukan konfirmasi kata sandi"
               /> */}
                 </div>
-                <div className="" style={{ marginBottom: 0 }}>
+                <div className="">
                   <Button
                     onClick={handleSubmit}
                     child="Daftar"
-                    className={styles.registerButton}
+                    className={`mt-2 ${styles.registerButton}`}
                   />
                 </div>
               </form>
             )}
             {tab === "register Perekrut" && <Recruiter />}
-            <div
-              className="text-center"
-              style={{ marginTop: "30px" }}
-            >
+            <div className="text-center" style={{ marginTop: "20px" }}>
               <Link href="/auth/login" style={{ textDecoration: "none" }}>
                 <p
                   style={{

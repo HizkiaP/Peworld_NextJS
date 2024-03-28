@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // import Button from '@/components/base/Button'
 import React from "react";
 import Footer from "@/components/module/Footer";
@@ -16,7 +16,8 @@ import Img6 from "/assets/Ellipse 325.png";
 import Icon from "/assets/tick 1.png";
 import Icon2 from "/assets/tick 13.png";
 import CardBody from "@/components/module/CardBody";
-import styles from "./page.module.css"
+import styles from "./page.module.css";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -25,20 +26,19 @@ const Home = () => {
       {/* Hero Section */}
       <section className="container">
         <div
-          className="d-flex mt-5"
-          // style={{ marginLeft: "7rem", marginRight: "7rem" }}
+          className={`${styles.wrapAll} mt-5`}
         >
           {/* Left */}
-          <div className="w-50 d-flex align-items-center">
+          <div className={`${styles.wrapLeft}`}>
             <div>
-              <h2 style={{ lineHeight: "50px" }}>
-                Talenta terbaik negri <br /> untuk perubahan <br /> revolusi 4.0
+              <h2 className="">
+                Talenta terbaik negri untuk perubahan revolusi 4.0
               </h2>
               <p className="mt-3">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />{" "}
-                Iusto eius itaque ullam, at cum nam! Sunt placeat aperiam
-                laudantium numquam.
+                Temukan talenta unggulan dengan Peworld. Pengalaman rekrutmen
+                yang efisien dan terpercaya untuk memperkuat tim Anda.
               </p>
+              <Link href={`/main/home`}>
               <Button
                 child="Mulai Dari Sekarang"
                 className="mb-5 mt-4"
@@ -46,40 +46,34 @@ const Home = () => {
                   width: "180px",
                   height: "50px",
                   backgroundColor: "#5E50A1",
-                  color: "#fff"
+                  color: "#fff",
                 }}
-                // onClick={() => }
               />
+              </Link>
             </div>
           </div>
           {/* Right */}
-          <div className="w-50 d-flex justify-content-end">
+          <div className={`${styles.wrapRight}`}>
             <Image
               src={Img}
               alt="Hero Image"
-              // width={0}
-              // height={0}
-              // style={{ width: "100%", height: "auto" }}
-              style={{ width: "500px", height: "500px" }}
+              className={`${styles.heroImg}`}
             />
           </div>
         </div>
       </section>
 
-      <section className="container" style={{ marginTop: "70px" }}>
+      <section className={`${styles.wrapContainer} container`}>
         <div
-          className="d-flex"
-          // style={{ marginLeft: "7rem", marginRight: "7rem" }}
+          className={`${styles.wrapAll2}`}
         >
           {/* Left */}
-          <div className="w-100">
+          <div className={`${styles.wrapLeft2}`}>
             <Image
               src={Img2}
               alt="hero-image"
-              width={0}
-              height={0}
-              style={{ width: "100%", height: "auto" }}
-              // style={{ width: "446px", height: "329px"}}
+              className={`${styles.heroImg2}`}
+              // style={{  height: "auto" }}
             />
           </div>
 
@@ -91,19 +85,19 @@ const Home = () => {
                 <div className="mt-4">
                   <li className="d-flex justify-content-start mb-2">
                     <Image src={Icon} alt="check" />
-                    <p className="ms-3">Lorem ipsum dolor sit.</p>
+                    <p className="ms-3">Ragam Keahlian</p>
                   </li>
                   <li className="d-flex justify-content-start mb-2">
                     <Image src={Icon} alt="check" />
-                    <p className="ms-3">Lorem ipsum dolor sit.</p>
+                    <p className="ms-3">Inovasi dan Kreativitas</p>
                   </li>
                   <li className="d-flex justify-content-start mb-2">
                     <Image src={Icon} alt="check" />
-                    <p className="ms-3">Lorem ipsum dolor sit.</p>
+                    <p className="ms-3">Fleksibilitas</p>
                   </li>
                   <li className="d-flex justify-content-start">
                     <Image src={Icon} alt="check" />
-                    <p className="ms-3">Lorem ipsum dolor sit.</p>
+                    <p className="ms-3">Adaptabilitas</p>
                   </li>
                 </div>
               </div>
@@ -112,14 +106,15 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="container">
-        <div className="d-flex">
+      <section className={`${styles.wrapContainer2} container`}>
+        <div className={`${styles.wrapAll3}`}>
           {/* Left */}
-          <div style={{ marginLeft: "12rem", marginTop: "5rem" }}>
-            <h4>Skill Tallent</h4>
+          <div className={`${styles.wrapLeft3}`}>
+            <h4>Skill Talent</h4>
             <p className="mb-4 mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-              euismod ipsum et dui rhoncus auctor.
+              Talent mempunyai keterampilan dalam berbagai bahasa pemrograman
+              yang beragam, memungkinkan mereka untuk berkontribusi dalam
+              berbagai proyek teknologi.
             </p>
             <div className="d-flex">
               <div>
@@ -163,59 +158,113 @@ const Home = () => {
           </div>
 
           {/* Right */}
-          <div>
-            <Image src={Img3} alt="hero-image" />
+          <div className={`${styles.wrapRight3}`}>
+            <Image src={Img3} alt="hero-image" className={`${styles.heroImg3}`}/>
           </div>
         </div>
       </section>
 
-      <section className="container" style={{ marginTop: "100px" }}>
-          <h4 className="text-center mb-5">Their opinion about peworld</h4>
-        <div className="d-flex justify-content-center" style={{ marginBottom: "10rem" }}>
-          <div className="d-flex justify-content-between gap-3">
+      <section className={`${styles.wrapContainer3} container`}>
+        <h4 className="text-center mb-5">Their opinion about peworld</h4>
+        <div
+          className={`${styles.wrapCard}`}
+        >
+          <div className={`${styles.card}`}>
             <div className="text-center">
-            <CardBody style={{ width: "339px", height: "377px", padding: "25px 30px 25px 30px" }}>
-                <Image src={Img4} alt="Harry"/>
+              <CardBody
+                style={{
+                  width: "339px",
+                  height: "377px",
+                  padding: "25px 30px 25px 30px",
+                }}
+              >
+                <Image src={Img4} alt="Harry" />
                 <h5>Harry Styles</h5>
-                <p style={{ color: "#9EA0A5", fontSize: "14px" }}>Web Developer</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis quas similique molestiae sunt voluptatem eveniet molestias vitae doloribus excepturi ullam!</p>
-            </CardBody>
+                <p style={{ color: "#9EA0A5", fontSize: "14px" }}>
+                  Web Developer
+                </p>
+                <p>
+                  Aplikasi Peworld dirancang untuk memberikan fleksibilitas dan
+                  keterbukaan terhadap kebutuhan berbagai jenis perusahaan
+                </p>
+              </CardBody>
             </div>
 
             <div className="text-center text-center">
-            <CardBody style={{ width: "339px", height: "377px", padding: "25px 30px 25px 30px" }}>
+              <CardBody
+                style={{
+                  width: "339px",
+                  height: "377px",
+                  padding: "25px 30px 25px 30px",
+                }}
+              >
                 <Image src={Img5} alt="Niall" />
                 <h5>Niall Horan</h5>
-                <p style={{ color: "#9EA0A5", fontSize: "14px" }}>Web Developer</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </CardBody>
+                <p style={{ color: "#9EA0A5", fontSize: "14px" }}>
+                  Web Developer
+                </p>
+                <p>
+                  Peworld menarik talenta unggulan yang aktif mencari peluang
+                  baru dan siap untuk berkontribusi secara signifikan dalam
+                  perusahaan
+                </p>
+              </CardBody>
             </div>
-            
+
             <div className=" text-center text-center">
-            <CardBody style={{ width: "339px", height: "377px", padding: "25px 30px 25px 30px" }}>
+              <CardBody
+                style={{
+                  width: "339px",
+                  height: "377px",
+                  padding: "25px 30px 25px 30px",
+                }}
+              >
                 <Image src={Img6} alt="Louis" />
                 <h5>Louis Tomlinson</h5>
-                <p style={{ color: "#9EA0A5", fontSize: "14px" }}>Web Developer</p>
-                <p>Lorem ipsum dolor sit amet, consectetur</p>
-            </CardBody>
+                <p style={{ color: "#9EA0A5", fontSize: "14px" }}>
+                  Web Developer
+                </p>
+                <p>
+                  memungkinkan perusahaan untuk menemukan kandidat terbaik dari
+                  berbagai latar belakang dan keahlian
+                </p>
+              </CardBody>
             </div>
           </div>
         </div>
       </section>
 
       <section className="container">
-        <div style={{ width: "100%", height: "auto", borderRadius: "40px 8px 40px 8px", backgroundColor: "#5E50A1", marginBottom: "7rem" }}>
-          <div className="d-flex justify-content-between" style={{ padding: "100px 100px" }}>
-          <div className="">
-              <h4 style={{ color: "#FFFFFF", width: "65%", fontSize: "32px" }}>Lorem ipsum dolor sit amet</h4>
-          </div>
+        <div
+          style={{
+            width: "100%",
+            height: "auto",
+            borderRadius: "40px 8px 40px 8px",
+            backgroundColor: "#5E50A1",
+            marginBottom: "7rem",
+          }}
+        >
+          <div
+            className={`${styles.wrapBtn}`}
+          >
+            <div className={`${styles.wrapText}`}>
+              <h4>
+              Temukan talenta unggulan dengan Peworld
+              </h4>
+            </div>
             <div className="">
-              <Button  child="Mulai Dari Sekarang" style={{ backgroundColor: "#FFFFFF", color: "#796EAF", padding: "13px 13px" }}/>
+              <Button
+                child="Mulai Dari Sekarang"
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  color: "#796EAF",
+                  padding: "13px 13px",
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
-
 
       <Footer />
     </>

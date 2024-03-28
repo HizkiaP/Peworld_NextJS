@@ -56,7 +56,7 @@ const Portofolio = () => {
             borderTopRightRadius: 15,
           }}
         >
-          {/* <div
+          <div
             style={{
               display: "flex",
               justifyContent: "end",
@@ -64,7 +64,9 @@ const Portofolio = () => {
               textAlign: "end",
             }}
           >
-            <MdEdit style={{ marginTop: "175px", marginRight: "7px", color: "#fff" }} />
+            <MdEdit
+              style={{ marginTop: "175px", marginRight: "7px", color: "#fff" }}
+            />
             <p
               style={{
                 color: "white",
@@ -74,7 +76,7 @@ const Portofolio = () => {
             >
               Ubah Latar
             </p>
-          </div> */}
+          </div>
           <div className={Styles.content}>
             {/* {loading ? (
             <div className="flex justify-center mt-4">
@@ -83,12 +85,12 @@ const Portofolio = () => {
           ) : ( */}
             {/* <> */}
             <Image
-                  src={Profile}
-                  alt="photo-profile"
-                  style={{ marginLeft: "5px", marginBottom: "1rem" }}
-                  width={170}
-                  height={170}
-                />
+              src={Profile}
+              alt="photo-profile"
+              style={{ marginLeft: "5px", marginBottom: "1rem" }}
+              width={170}
+              height={170}
+            />
             {/* <CiUser
               style={{
                 width: 80,
@@ -114,8 +116,14 @@ const Portofolio = () => {
               <PiMapPin />
               <p style={{ paddingTop: 10 }}>{dataRecruiter.city}</p>
             </div>
+            <p style={{ paddingTop: 10, color: "#9EA0A5" }}>{dataRecruiter.description}</p>
             <button type="submit" style={{ marginBottom: 5 }}>
-              <Link href="/main/profile/recruiter/edit" style={{ textDecoration: "none", color: "#fff" }}>Edit Profile</Link>
+              <Link
+                href="/main/profile/recruiter/edit"
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                Edit Profile
+              </Link>
             </button>
             <div>
               <div

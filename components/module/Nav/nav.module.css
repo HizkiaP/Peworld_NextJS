@@ -9,3 +9,15 @@
     color: #fff;
     /* margin-right: 30px; */
 }
+
+.navbar {
+    margin-left: 7rem;
+    margin-right: 7rem;
+}
+
+@media (min-width: 425px) and (max-width: 992px) {
+    .navbar {
+        margin-left: 1rem;
+        margin-right: 1.7rem;
+    }
+}

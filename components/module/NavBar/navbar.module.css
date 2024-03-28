@@ -1,0 +1,5 @@
+@media (min-width: 425px) and (max-width: 992px) {
+    .wrapAll {
+        margin-left: 20px;
+    }
+}

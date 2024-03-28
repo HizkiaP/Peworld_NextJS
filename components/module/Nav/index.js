@@ -12,23 +12,22 @@ const Nav = () => {
 
   const handleGetRole = () => {
     const role = localStorage.getItem("role");
-    if(role) {
-      setIsLoggedIn(true)
+    if (role) {
+      setIsLoggedIn(true);
     }
-  }
+  };
 
   useEffect(() => {
-    handleGetRole()
+    handleGetRole();
   }, []);
   return (
     <>
       {isLoggedIn ? (
         <NavLogin />
       ) : (
-        <nav className="navbar">
+        <nav className={`${styles.navbar}`}>
           <div
-            className="d-flex justify-content-between w-100 mt-4"
-            style={{ marginLeft: "7rem", marginRight: "7rem" }}
+            className={`d-flex justify-content-between mt-4 ${styles.wrapperNav}`}
           >
             <div className="">
               <Link className="navbar-brand" href="/">

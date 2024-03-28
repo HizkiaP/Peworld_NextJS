@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import logoNav from "/assets/Group 980 1.png";
 import Button from "@/components/base/button";
 import { useParams, useRouter } from "next/navigation";
+import styles from "./navLogin.module.css";
 
 const NavLogin = () => {
   const router = useRouter();
@@ -38,8 +39,8 @@ const NavLogin = () => {
     }
   },[])
   return (
-    <nav className="navbar">
-      <div className="container mt-3">
+    <nav className="navbar mt-3">
+      <div className="container">
         <div className="row">
           <div className="col d-flex">
             <Link className="navbar-brand" href="/">
@@ -47,7 +48,7 @@ const NavLogin = () => {
             </Link>
             <Button
               child="Home"
-              style={{ color: "#000", marginLeft: "100px", marginTop: "5px" }}
+              className={`${styles.home}`}
               onClick={() => router.push("/main/home")}
             />
           </div>

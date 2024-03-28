@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Pagination from "@/components/module/Pagination";
 import Input from "@/components/base/Input";
+import styles from "./home.module.css";
 
 // const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -69,11 +70,11 @@ const Home = () => {
       <div className="d-flex justify-content-center">
         <div className="d-flex mb-4">
           <Input
-            className=""
+            className={`${styles.inp} mb-3`}
             placeholder="Search for any skill"
             value={search}
             onChange={handleSearchChange}
-            style={{ borderRadius: "4px" }}
+            // style={{ borderRadius: "4px" }}
           />
           {/* <button
               className="w-32 h-50 bg-purple-800 rounded-r text-white ml-5"
@@ -93,7 +94,7 @@ const Home = () => {
               borderColor: "#C5C5C540",
               height: "45px",
               marginTop: "24px",
-              borderRadius: "4px"
+              borderRadius: "4px",
             }}
           >
             <option selected>Sort</option>
@@ -103,7 +104,12 @@ const Home = () => {
           <Button
             child="Search"
             onClick={() => handlePageChange(1)}
-            style={{ backgroundColor: "#5E50A1", color: "#fff", height: "45px", marginTop: "24px" }}
+            style={{
+              backgroundColor: "#5E50A1",
+              color: "#fff",
+              height: "45px",
+              marginTop: "24px",
+            }}
             className="ms-2"
           />
         </div>
@@ -111,32 +117,20 @@ const Home = () => {
 
       {data &&
         data.map((item, index) => (
-          <CardBody
-            key={index}
-            style={{ marginLeft: "7rem", marginRight: "7rem" }}
-          >
-            <div className="d-flex">
-              <div className="d-flex gap-3 col-10">
+          <CardBody key={index} className={`${styles.wrapCard}`}>
+            <div className="d-flex ">
+              <div className={`d-flex gap-3 col-10 ${styles.wrapImg}`}>
                 <Image
                   src={Avatar}
                   alt="Profile Photo"
-                  width={150}
-                  height={150}
+                  className={`${styles.img}`}
                 />
-                <div style={{ marginTop: "30px" }}>
+                <div className={`${styles.wrapStat}`}>
                   <h4>{item.name}</h4>
-                  <p>Job: {item.job_desk || "-"}</p>
+                  <p className={`${styles.job}`}>Job: {item.job_desk || "-"}</p>
                   <div className="d-flex gap-2">
                     <PiMapPin style={{ color: "#9EA0A5" }} />
-                    <p
-                      style={{
-                        color: "#9EA0A5",
-                        fontSize: "13px",
-                        fontWeight: "400",
-                      }}
-                    >
-                      {item.domicile || "-"}
-                    </p>
+                    <p className={`${styles.loc}`}>{item.domicile || "-"}</p>
                   </div>
                 </div>
               </div>
@@ -144,14 +138,7 @@ const Home = () => {
                 <Link href={`/main/profile/worker/portofolio/${item.id}`}>
                   <Button
                     child="Lihat Profile"
-                    style={{
-                      backgroundColor: "#5E50A1",
-                      color: "#fff",
-                      width: "120px",
-                      height: "44px",
-                      marginTop: "60px",
-                      // marginLeft: "500px",
-                    }}
+                    className={`${styles.btn}`}
                     // onClick={() => router.push(`/main/profile/worker/portofolio/${data.id}`)}
                   />
                 </Link>
@@ -160,11 +147,7 @@ const Home = () => {
             {/* <p>{JSON.stringify(data)}</p> */}
           </CardBody>
         ))}
-      <Pagination
-        data={data}
-        itemPerPage={2}
-        onPageChange={handlePageChange}
-      />
+      <Pagination data={data} itemPerPage={2} onPageChange={handlePageChange} />
       <Footer />
     </>
   );

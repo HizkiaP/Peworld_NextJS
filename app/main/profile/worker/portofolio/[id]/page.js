@@ -106,103 +106,6 @@ const Portofolio = () => {
     handleGetPortfolio();
   }, []);
 
-  const handleUpdatePortfolio = async (itemsId) => {
-    try {
-      console.log("DATA UPDATE PORTFOLIO =", updatePortfolio);
-
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/portfolio/${itemsId}`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updatePortfolio),
-        }
-      );
-      const result = await response.json();
-      if(!result.status === "success"){
-        throw result.error
-      }
-
-      console.log("RESULT UPDATE PORTOFOLIO = ", result);
-      // alert("Update Portofolio Success");
-      handleClose();
-      handleGetPortfolio();
-      // router.push("/")
-    } catch (error) {
-      console.log(error);
-      alert("Update Portofolio Failed");
-    }
-  };
-
-  const handleChangePortfolio = (e) => {
-    setUpdatePortfolio((updatePortfolio) => ({
-      ...updatePortfolio,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleUploadFile = async (e) => {
-    e.preventDefault();
-    const form = new FormData();
-    form.append("file", e.target.files[0]);
-
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/upload`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-            // "Content-Type": `multipart/form-data; boundary=MyBoundary`,
-          },
-          // body: JSON.stringify(form),
-          body: form,
-        }
-      );
-      const result = await response.json();
-      console.log("RESULT UPLOAD IMAGE = ", result);
-      setUpdatePortfolio((updatePortfolio) => ({
-        ...updatePortfolio,
-        image: result.data.file_url,
-      }));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleDeletePortfolio = async (itemId) => {
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/portfolio/${itemId}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      console.log(response);
-      setPortfolio((prevPortfolio) =>
-        prevPortfolio.filter((item) => item.id !== itemId)
-      ),
-        Swal.fire({
-          icon: "success",
-          title: "Delete Success",
-          text: "Delete Success",
-        });
-    } catch (error) {
-      console.log(error);
-      Swal.fire({
-        icon: "error",
-        title: "Delete Failed",
-        text: "Delete Failed",
-      });
-    }
-  };
-
   return (
     <>
       <NavBar />
@@ -254,26 +157,11 @@ const Portofolio = () => {
                   {data.workplace}
                 </p>
                 <p style={{ color: "#9EA0A5", fontSize: "13px" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum erat orci, mollis nec gravida sed, ornare quis
-                  urna. Curabitur eu lacus fringilla, vestibulum risus at.
+                  {data.description}
                 </p>
               </div>
 
-              {role === "worker" ? (
-                <Link href={`/main/profile/worker/edit`}>
-                  <Button
-                    child="Edit Profile"
-                    style={{
-                      backgroundColor: "#5E50A1",
-                      color: "#fff",
-                      width: "227px",
-                      height: "44px",
-                      marginBottom: 30,
-                    }}
-                  />
-                </Link>
-              ) : (
+              {role === "recruiter" ? (
                 <Link href={`/main/hire/${data.id}`}>
                   <Button
                     child="Hire"
@@ -286,7 +174,7 @@ const Portofolio = () => {
                     }}
                   />
                 </Link>
-              )}
+              ) : ""}
 
               <div style={{ marginBottom: "40px" }}>
                 <h5 className="mb-3">Skill</h5>
@@ -319,42 +207,6 @@ const Portofolio = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Instagram */}
-                {/* <div className="d-flex">
-                  <div>
-                    <FaInstagram style={{ color: "#9EA0A5" }} />
-                  </div>
-                  <div style={{ marginTop: "3.5px", marginLeft: "10px" }}>
-                    <p style={{ color: "#9EA0A5", fontSize: "13px" }}>
-                      @Louist91
-                    </p>
-                  </div>
-                </div> */}
-
-                {/* Github */}
-                {/* <div className="d-flex">
-                  <div>
-                    <FiGithub style={{ color: "#9EA0A5" }} />
-                  </div>
-                  <div style={{ marginTop: "3.5px", marginLeft: "10px" }}>
-                    <p style={{ color: "#9EA0A5", fontSize: "13px" }}>
-                      @Louistommo
-                    </p>
-                  </div>
-                </div> */}
-
-                {/* Gitlab */}
-                {/* <div className="d-flex">
-                  <div>
-                    <RiGitlabLine style={{ color: "#9EA0A5" }} />
-                  </div>
-                  <div style={{ marginTop: "3.5px", marginLeft: "10px" }}>
-                    <p style={{ color: "#9EA0A5", fontSize: "13px" }}>
-                      @Louistommo91
-                    </p>
-                  </div>
-                </div> */}
               </div>
             </CardBody>
           </div>
@@ -367,12 +219,11 @@ const Portofolio = () => {
                   <div>
                     <Button
                       onClick={() => setTab("portofolio")}
-                      className={tab === "portofolio" ? Styles.tab : ""}
-                      style={{
-                        color: "#1F2A36",
-                        border: "none",
-                        textDecoration: "underline solid #5E50A1 4px",
-                      }}
+                      className={
+                        tab === "portofolio"
+                          ? `${Styles.activeTab}`
+                          : `${Styles.inactiveTab}`
+                      }
                     >
                       <h5>Portofolio</h5>
                     </Button>
@@ -381,12 +232,11 @@ const Portofolio = () => {
                   <div className="">
                     <Button
                       onClick={() => setTab("experience")}
-                      className={tab === "experience" ? Styles.tab : ""}
-                      style={{
-                        color: "#1F2A36",
-                        border: "none",
-                        marginRight: "2rem",
-                      }}
+                      className={
+                        tab === "experience"
+                          ? `${Styles.activeTab}`
+                          : `${Styles.inactiveTab}`
+                      }
                     >
                       <h5>Pengalaman kerja</h5>
                     </Button>
@@ -399,7 +249,6 @@ const Portofolio = () => {
                       <div
                         style={{ marginTop: "2rem", textAlign: "center" }}
                         key={index}
-                        className="position-relative"
                       >
                         <Image
                           src={item.image}
@@ -413,85 +262,6 @@ const Portofolio = () => {
                             {item.application_name}
                           </p>
                         </div>
-                        {role === "worker" && (
-                          <>
-                            <button
-                              className="position-absolute mt-2"
-                              style={{ left: "65%", top: "2%" }}
-                              onClick={handleShow}
-                            >
-                              <TbEdit />
-                            </button>
-
-                            <Modal show={modalVisible} onHide={handleClose}>
-                              <Modal.Header closeButton>
-                                <Modal.Title>Update Portfolio</Modal.Title>
-                              </Modal.Header>
-                              <Modal.Body>
-                                <Form.Label>App Name</Form.Label>
-                                <Form.Control
-                                  type="text"
-                                  placeholder="Edit App Name"
-                                  name="application_name"
-                                  value={updatePortfolio.application_name}
-                                  onChange={handleChangePortfolio}
-                                  className="mb-2"
-                                />
-                                <Form.Label>Link Repository</Form.Label>
-                                <Form.Control
-                                  type="text"
-                                  placeholder="Edit Link Repository"
-                                  name="link_repository"
-                                  value={updatePortfolio.link_repository}
-                                  onChange={handleChangePortfolio}
-                                  className="mb-2"
-                                />
-                                <Form.Label>App Type</Form.Label>
-                                <Form.Control
-                                  type="text"
-                                  placeholder="Edit Type App"
-                                  name="application"
-                                  value={updatePortfolio.application}
-                                  onChange={handleChangePortfolio}
-                                  className="mb-2"
-                                />
-                                <Form.Label>Image</Form.Label>
-                                <Form.Control
-                                  type="file"
-                                  placeholder="Edit Type App"
-                                  onChange={handleUploadFile}
-                                />
-                              </Modal.Body>
-                              <Modal.Footer>
-                                <Button
-                                  onClick={handleClose}
-                                  style={{
-                                    borderColor: "#5E50A1",
-                                    color: "#5E50A1",
-                                  }}
-                                >
-                                  Close
-                                </Button>
-                                <Button
-                                  onClick={() => handleUpdatePortfolio(item.id)}
-                                  style={{
-                                    backgroundColor: "#5E50A1",
-                                    color: "#fff",
-                                  }}
-                                >
-                                  Save Changes
-                                </Button>
-                              </Modal.Footer>
-                            </Modal>
-                            <button
-                              onClick={() => handleDeletePortfolio(item.id)}
-                              className="position-absolute mt-2"
-                              style={{ left: "80%", top: "2%" }}
-                            >
-                              <FaTrash />
-                            </button>
-                          </>
-                        )}
                       </div>
                     ))}
                   </div>

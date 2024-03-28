@@ -1,3 +1,7 @@
+.wrapText {
+    width: 25%;
+}
+
 .text {
     color: #fff;
     font-weight: 200;
@@ -19,4 +23,10 @@
     list-style: none;
     color: #fff;
     font-weight: 200;
+}
+
+@media (min-width: 425px) and (max-width: 992px) {
+    .wrapText {
+        width: auto;
+    }
 }

@@ -13,18 +13,15 @@ const Footer = () => {
           <Link href="/">
             <Image src={logoNav} alt="Bootstrap" width="178" height="50" />
           </Link>
-          <div className="mt-4 w-25">
+          <div className={`${styles.wrapText} mt-4`}>
             <p className={styles.text}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum
-              accusamus fugit consectetur illo aspernatur ratione nemo ea
-              doloremque tenetur amet?
+            Temukan talenta unggulan dengan Peworld. Pengalaman rekrutmen yang efisien dan terpercaya untuk memperkuat tim Anda.
             </p>
           </div>
           <div className={styles.line}></div>
           <div className="d-flex justify-content-between mt-4">
             <div>
               <p style={{ color: "#fff",  fontWeight: "200"}}>2020 Pewworld. All right reserved</p>
-
             </div>
             <div className="d-flex gap-5">
               <li className={styles.list}>Telepon</li>

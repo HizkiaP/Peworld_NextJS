@@ -45,6 +45,7 @@ const NotifWorker = () => {
                 height={150}
               />
               <div style={{ marginTop: "5px" }}>
+                <h2>{item.message_purpose}</h2>
                 <p>{`Recruiter Name : ${item.recruiter_name}`}</p>
                 <p>{`Recruiter Company : ${item.recruiter_company}`}</p>
                 <p>{item.recruiter_position}</p>

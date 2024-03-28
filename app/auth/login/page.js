@@ -59,9 +59,9 @@ const LoginPage = () => {
 
   return (
     <div className="container">
-      <div className="row">
+      <div className={`row ${styles.wrapAll}`}>
         <div
-          className="col-6"
+          className="col-lg-6"
           style={{ height: "100vh", backgroundColor: "#5E50A1" }}
         >
           <Image
@@ -75,26 +75,19 @@ const LoginPage = () => {
             }}
           />
         </div>
-        <div className="col-6">
-          <div className="" style={{ marginTop: "125px", marginLeft: "50px" }}>
+        <div className={`col-lg-6 ${styles.wrapperText}`}>
+          <div className={`${styles.wrapText}`}>
             <div>
-              <h2
-                style={{
-                  color: "#1F2A36",
-                  fontWeight: "600",
-                }}
-              >
-                Halo, Pewpeople
-              </h2>
-              <p style={{ fontWeight: "400" }}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Numquam doloribus, aspernatur quaerat dolore iure a!
+              <h2>Halo, Pewpeople</h2>
+              <p className={`${styles.line}`}>
+                Selamat datang kembali di Peworld! Masuk untuk mengakses talenta
+                terbaik dan kelola proses rekrutmen Anda dengan lebih efektif.
               </p>
             </div>
             <form>
-              <div>
+              <div className={`${styles.wrapInput}`}>
                 <Input
-                  className="mb-4"
+                  className={`mb-4 ${styles.label}`}
                   child="Email"
                   placeholder="Masukan alamat email"
                   name="email"
@@ -102,7 +95,7 @@ const LoginPage = () => {
                   onChange={handleChange}
                 />
                 <Input
-                  className="mb-4"
+                  className={`mb-4 ${styles.label}`}
                   child="Kata Sandi"
                   placeholder="Masukan kata sandi"
                   type="password"
@@ -113,15 +106,7 @@ const LoginPage = () => {
               </div>
             </form>
             <div>
-              <p
-                className="text-end mb-4"
-                style={{
-                  fontWeight: "400",
-                  color: "#1F2A36",
-                  fontSize: "14px",
-                  paddingRight: "70px",
-                }}
-              >
+              <p className={`text-end mb-4 ${styles.forgot}`}>
                 Lupa kata sandi?
               </p>
             </div>
@@ -132,15 +117,9 @@ const LoginPage = () => {
                 className={styles.loginButton}
               />
             </div>
-            <div className="text-center" style={{ paddingRight: "70px" }}>
+            <div className={`text-center ${styles.wrapNone}`}>
               <Link href="/auth/register" style={{ textDecoration: "none" }}>
-                <p
-                  style={{
-                    color: "#1F2A36",
-                    fontSize: "14px",
-                    fontWeight: "400",
-                  }}
-                >
+                <p className={`${styles.none}`}>
                   Anda belum punya akun?{" "}
                   <span style={{ color: "#FBB017" }}>Daftar disini</span>
                 </p>
